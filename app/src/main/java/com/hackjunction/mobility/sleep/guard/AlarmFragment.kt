@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.hackjunction.mobility.R
-import com.hackjunction.mobility.databinding.QuestionFragmentBinding
+import com.hackjunction.mobility.databinding.AlarmFragmentBinding
 
 class AlarmFragment : Fragment() {
 
@@ -18,7 +18,7 @@ class AlarmFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding: QuestionFragmentBinding =
+        val binding: AlarmFragmentBinding =
             DataBindingUtil.inflate(inflater, R.layout.alarm_fragment, container, false)
         return binding.root
     }
