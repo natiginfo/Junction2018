@@ -1,1 +1,1 @@
-include ':app', ':fleetboard-sdk'
+include ':app'
