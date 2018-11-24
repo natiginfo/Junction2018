@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/navigation_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/mainFragment">
 
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.hackjunction.mobility.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_pairDeviceFragment"
+            app:destination="@id/pairDeviceFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pairDeviceFragment"
+        android:name="com.hackjunction.mobility.PairDeviceFragment"
+        android:label="PairDeviceFragment">
+        <action
+            android:id="@+id/action_pairDeviceFragment_to_mainFragment2"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.hackjunction.mobility.sleep.guard.QuestionFragment"
+        android:label="QuestionFragment">
+        <action
+            android:id="@+id/action_questionFragment_to_timerFragment"
+            app:destination="@id/timerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/timerFragment"
+        android:name="com.hackjunction.mobility.sleep.guard.TimerFragment"
+        android:label="TimerFragment">
+        <action
+            android:id="@+id/action_timerFragment_to_alarmFragment"
+            app:destination="@id/alarmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alarmFragment"
+        android:name="com.hackjunction.mobility.sleep.guard.AlarmFragment"
+        android:label="AlarmFragment" />
 </navigation>
