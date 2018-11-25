@@ -24,7 +24,7 @@
             app:ctvCircleStrokeWidth="1dp"
             app:ctvCurrentTimeInSeconds="600"
             app:ctvHighlightMarkLineColor="#00f7ff"
-            app:ctvLabelText="Time to next checkup"
+            app:ctvLabelText=""
             app:ctvLabelTextColor="#fff"
             app:ctvLabelTextSize="18sp"
             app:ctvLapBackgroundColor="#9adf1b"

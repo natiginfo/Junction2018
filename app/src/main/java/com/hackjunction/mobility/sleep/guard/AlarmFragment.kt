@@ -2,7 +2,9 @@ package com.hackjunction.mobility.sleep.guard
 
 import android.animation.ValueAnimator
 import android.graphics.Color
+import android.media.MediaPlayer
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +19,23 @@ import kotlinx.android.synthetic.main.alarm_fragment.*
 
 class AlarmFragment : Fragment() {
     private lateinit var binding: AlarmFragmentBinding
+    private lateinit var countDownTimer: CountDownTimer
+    private lateinit var myMediaPlayer: MediaPlayer
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        countDownTimer = object : CountDownTimer(10_000, 1000) {
+
+            override fun onTick(millisUntilFinished: Long) {}
+
+            override fun onFinish() {
+                sendSms("+358505059422")
+            }
+        }
+    }
+
+    private fun sendSms(number: String) {
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +47,8 @@ class AlarmFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        myMediaPlayer = MediaPlayer.create(activity, R.raw.alarm)
+        myMediaPlayer.start()
 
         snoozeButton.setOnClickListener {
             this.findNavController().navigate(AlarmFragmentDirections.actionAlarmFragmentToTimerFragment(600))
@@ -49,5 +70,12 @@ class AlarmFragment : Fragment() {
         anim.repeatCount = Animation.INFINITE
 
         anim.start()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        myMediaPlayer.stop()
+        countDownTimer.cancel()
+        binding.unbind()
     }
 }
