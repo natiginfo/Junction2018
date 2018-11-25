@@ -28,45 +28,47 @@
         android:name="com.hackjunction.mobility.PairDeviceFragment"
         android:label="@string/app_name">
         <action
+            android:id="@+id/action_pairDeviceFragment_to_questionFragment"
+            app:destination="@id/questionFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/slide_out_right"
-            android:id="@+id/action_pairDeviceFragment_to_mainFragment2"
-            app:destination="@id/mainFragment" />
+            app:popUpTo="@+id/pairDeviceFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/questionFragment"
         android:name="com.hackjunction.mobility.sleep.guard.QuestionFragment"
         android:label="@string/app_name">
         <action
+            android:id="@+id/action_questionFragment_to_timerFragment"
+            app:destination="@id/timerFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/slide_out_right"
-            android:id="@+id/action_questionFragment_to_timerFragment"
-            app:destination="@id/timerFragment"
             app:popUpTo="@+id/questionFragment"
             app:popUpToInclusive="true" />
         <action
+            android:id="@+id/action_questionFragment_to_alarmFragment"
+            app:destination="@id/alarmFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/slide_out_right"
-            android:id="@+id/action_questionFragment_to_alarmFragment"
-            app:destination="@id/alarmFragment" />
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/timerFragment"
         android:name="com.hackjunction.mobility.sleep.guard.TimerFragment"
         android:label="@string/app_name">
         <action
+            android:id="@+id/action_timerFragment_to_questionFragment"
+            app:destination="@id/questionFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/slide_out_right"
-            android:id="@+id/action_timerFragment_to_questionFragment"
-            app:destination="@id/questionFragment" />
+            app:popExitAnim="@anim/slide_out_right" />
         <argument
             android:name="seconds"
             app:argType="integer" />
@@ -76,12 +78,12 @@
         android:name="com.hackjunction.mobility.sleep.guard.AlarmFragment"
         android:label="@string/app_name">
         <action
+            android:id="@+id/action_alarmFragment_to_timerFragment"
+            app:destination="@id/timerFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/slide_out_right"
-            android:id="@+id/action_alarmFragment_to_timerFragment"
-            app:destination="@id/timerFragment"
             app:popUpTo="@+id/alarmFragment"
             app:popUpToInclusive="true" />
     </fragment>
