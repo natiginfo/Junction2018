@@ -20,6 +20,7 @@
     <style name="ActionBarTitleTextStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textColor">#6ed8ff</item>
         <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/museo_sans_900</item>
 
     </style>
 
@@ -31,4 +32,16 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MainButtonStyle">
+        <item name="android:background">@drawable/main_button_background</item>
+        <item name="android:fontFamily">@font/museo_sans_700</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingStart">32dp</item>
+        <item name="android:paddingEnd">32dp</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">#14012b</item>
+    </style>
 </resources>
