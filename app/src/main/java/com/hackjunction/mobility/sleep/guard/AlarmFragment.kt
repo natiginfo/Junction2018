@@ -15,6 +15,9 @@ import androidx.navigation.fragment.findNavController
 import com.hackjunction.mobility.R
 import com.hackjunction.mobility.databinding.AlarmFragmentBinding
 import kotlinx.android.synthetic.main.alarm_fragment.*
+import okhttp3.*
+import timber.log.Timber
+import java.io.IOException
 
 
 class AlarmFragment : Fragment() {
@@ -26,7 +29,9 @@ class AlarmFragment : Fragment() {
         super.onCreate(savedInstanceState)
         countDownTimer = object : CountDownTimer(10_000, 1000) {
 
-            override fun onTick(millisUntilFinished: Long) {}
+            override fun onTick(millisUntilFinished: Long) {
+                Timber.i("onTick")
+            }
 
             override fun onFinish() {
                 sendSms("+358505059422")
@@ -34,7 +39,25 @@ class AlarmFragment : Fragment() {
         }
     }
 
+
     private fun sendSms(number: String) {
+        val okHttpClient = OkHttpClient()
+
+        val request = okhttp3.Request.Builder()
+            .url("https://contafe.com/nic/junction2018.php?msg=Driver with null ID is not responding to sleep tracker. You should contact to make sure he/she's fine. Location: -1, -1")
+            .build()
+
+        okHttpClient.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                Timber.e("Failure: ${e.message}")
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                Timber.i("Fine")
+            }
+
+        })
+
     }
 
     override fun onCreateView(
@@ -49,6 +72,7 @@ class AlarmFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         myMediaPlayer = MediaPlayer.create(activity, R.raw.alarm)
         myMediaPlayer.start()
+        countDownTimer.start()
 
         snoozeButton.setOnClickListener {
             this.findNavController().navigate(AlarmFragmentDirections.actionAlarmFragmentToTimerFragment(600))
