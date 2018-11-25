@@ -30,7 +30,7 @@ class AlarmFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         snoozeButton.setOnClickListener {
-            this.findNavController().navigate(AlarmFragmentDirections.actionAlarmFragmentToTimerFragment())
+            this.findNavController().navigate(AlarmFragmentDirections.actionAlarmFragmentToTimerFragment(600))
         }
 
         val anim = ValueAnimator.ofFloat(0F, 1F)

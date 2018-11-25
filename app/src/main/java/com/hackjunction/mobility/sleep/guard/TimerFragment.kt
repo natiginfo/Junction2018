@@ -26,6 +26,8 @@ class TimerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val args = TimerFragmentArgs.fromBundle(arguments)
+        binding.circleTimerView.setCurrentTime(args.seconds.toLong())
         binding.circleTimerView.circleTimerListener = object : CircleTimeView.CircleTimerListener {
             override fun onTimerStop() {
                 view.findNavController().navigate(TimerFragmentDirections.actionTimerFragmentToQuestionFragment())
