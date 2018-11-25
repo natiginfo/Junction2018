@@ -52,16 +52,16 @@ class QuestionFragment : Fragment() {
         countDownTimer.start()
 
         binding.notSleepyButton.setOnClickListener {
-            this.findNavController().navigate(QuestionFragmentDirections.actionQuestionFragmentToTimerFragment())
+            this.findNavController().navigate(QuestionFragmentDirections.actionQuestionFragmentToTimerFragment(900))
         }
         binding.notSoSleepyButton.setOnClickListener {
-            this.findNavController().navigate(QuestionFragmentDirections.actionQuestionFragmentToTimerFragment())
+            this.findNavController().navigate(QuestionFragmentDirections.actionQuestionFragmentToTimerFragment(720))
         }
         binding.kindOfSleepyButton.setOnClickListener {
-            this.findNavController().navigate(QuestionFragmentDirections.actionQuestionFragmentToTimerFragment())
+            this.findNavController().navigate(QuestionFragmentDirections.actionQuestionFragmentToTimerFragment(600))
         }
         binding.sleepyButton.setOnClickListener {
-            this.findNavController().navigate(QuestionFragmentDirections.actionQuestionFragmentToTimerFragment())
+            this.findNavController().navigate(QuestionFragmentDirections.actionQuestionFragmentToTimerFragment(300))
         }
     }
 
