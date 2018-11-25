@@ -10,16 +10,28 @@
         android:label="@string/app_name">
         <action
             android:id="@+id/action_mainFragment_to_pairDeviceFragment"
-            app:destination="@id/pairDeviceFragment" />
+            app:destination="@id/pairDeviceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_mainFragment_to_questionFragment"
-            app:destination="@id/questionFragment" />
+            app:destination="@id/questionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/pairDeviceFragment"
         android:name="com.hackjunction.mobility.PairDeviceFragment"
         android:label="@string/app_name">
         <action
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"
             android:id="@+id/action_pairDeviceFragment_to_mainFragment2"
             app:destination="@id/mainFragment" />
     </fragment>
@@ -28,11 +40,19 @@
         android:name="com.hackjunction.mobility.sleep.guard.QuestionFragment"
         android:label="@string/app_name">
         <action
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"
             android:id="@+id/action_questionFragment_to_timerFragment"
             app:destination="@id/timerFragment"
             app:popUpTo="@+id/questionFragment"
             app:popUpToInclusive="true" />
         <action
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"
             android:id="@+id/action_questionFragment_to_alarmFragment"
             app:destination="@id/alarmFragment" />
     </fragment>
@@ -41,6 +61,10 @@
         android:name="com.hackjunction.mobility.sleep.guard.TimerFragment"
         android:label="@string/app_name">
         <action
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"
             android:id="@+id/action_timerFragment_to_questionFragment"
             app:destination="@id/questionFragment" />
         <argument
@@ -50,8 +74,12 @@
     <fragment
         android:id="@+id/alarmFragment"
         android:name="com.hackjunction.mobility.sleep.guard.AlarmFragment"
-        android:label="@string/app_name" >
+        android:label="@string/app_name">
         <action
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"
             android:id="@+id/action_alarmFragment_to_timerFragment"
             app:destination="@id/timerFragment"
             app:popUpTo="@+id/alarmFragment"
