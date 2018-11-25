@@ -34,7 +34,8 @@ class AlarmFragment : Fragment() {
             }
 
             override fun onFinish() {
-                sendSms("+358505059422")
+                //TODO: PUT YOUR NUMBER
+                sendSms("")
             }
         }
     }
@@ -43,8 +44,8 @@ class AlarmFragment : Fragment() {
     private fun sendSms(number: String) {
         val okHttpClient = OkHttpClient()
 
-        val request = okhttp3.Request.Builder()
-            .url("https://contafe.com/nic/junction2018.php?msg=Driver with null ID is not responding to sleep tracker. You should contact to make sure he/she's fine. Location: -1, -1")
+        val request = Request.Builder()
+            .url("https://contafe.com/nic/junction2018.php?receiver=$number&msg=Driver with null ID is not responding to sleep tracker. You should contact to make sure he/she's fine. Location: -1, -1")
             .build()
 
         okHttpClient.newCall(request).enqueue(object : Callback {
