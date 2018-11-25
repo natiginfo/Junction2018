@@ -30,17 +30,24 @@
         <action
             android:id="@+id/action_questionFragment_to_timerFragment"
             app:destination="@id/timerFragment" />
+        <action
+            android:id="@+id/action_questionFragment_to_alarmFragment"
+            app:destination="@id/alarmFragment" />
     </fragment>
     <fragment
         android:id="@+id/timerFragment"
         android:name="com.hackjunction.mobility.sleep.guard.TimerFragment"
         android:label="@string/app_name">
         <action
-            android:id="@+id/action_timerFragment_to_alarmFragment"
-            app:destination="@id/alarmFragment" />
+            android:id="@+id/action_timerFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
     </fragment>
     <fragment
         android:id="@+id/alarmFragment"
         android:name="com.hackjunction.mobility.sleep.guard.AlarmFragment"
-        android:label="@string/app_name" />
+        android:label="@string/app_name" >
+        <action
+            android:id="@+id/action_alarmFragment_to_timerFragment"
+            app:destination="@id/timerFragment" />
+    </fragment>
 </navigation>

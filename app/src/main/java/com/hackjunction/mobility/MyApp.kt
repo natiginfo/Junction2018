@@ -14,7 +14,5 @@ class MyApp : Application() {
         } catch (e: Exception) {
             Timber.i(e)
         }
-
-
     }
 }

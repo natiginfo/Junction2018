@@ -32,4 +32,9 @@ class MainFragment : Fragment() {
             view.findNavController().navigate(MainFragmentDirections.actionMainFragmentToQuestionFragment())
         }
     }
+
+    override fun onDestroyView() {
+        binding.unbind()
+        super.onDestroyView()
+    }
 }
