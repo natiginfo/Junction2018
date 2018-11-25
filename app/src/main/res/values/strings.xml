@@ -7,4 +7,5 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="app_description">SleepyTruck helps you to stay awake when you are on the road. SleepyTruck will track your heart rate, movements, temperature and alarms you if you’re about to fall asleep.</string>
 </resources>
